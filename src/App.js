@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -81,7 +83,9 @@ function App() {
   } else {
     return (
       <div className="App">
-        <header className="App-header">
+        <Navbar className="navbar" />
+        <Hero></Hero>
+        {/* <header className="App-header">
           <p>{"Blah" + token}</p>
           <a
             className="App-link"
@@ -91,7 +95,7 @@ function App() {
           >
             Learn React
           </a>
-        </header>
+        </header> */}
       </div>
     );
   }
