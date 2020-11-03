@@ -1,0 +1,37 @@
+@import "colors";
+
+.widget {
+  background-color: $dark;
+  position: absolute;
+  height: 16rem;
+  width: 25rem;
+  left: 10px;
+  bottom: 10px;
+  z-index: 100;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.widget__left {
+    position: relative;
+    grid-column: auto;
+
+    &--image {
+        height: 100%;
+        width: 100%;
+    }
+
+    &--trackcount {
+        position: absolute;
+        color: white;
+        font-size: 2rem;
+        font-weight: 700;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+}
+
+
+

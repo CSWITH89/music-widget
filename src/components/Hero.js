@@ -1,7 +1,7 @@
 import React from 'react';
 import heroImage from '../images/stage.jpg'
 
-const Hero = () => {
+const Hero = ({children}) => {
     return (
         <div className="hero">
             <div className="hero__container">
@@ -17,6 +17,7 @@ const Hero = () => {
                     <img src={heroImage} alt="stage" className="hero__container--img"/>
                 </div>
             </div>
+            {children}
         </div>
     )
 }
