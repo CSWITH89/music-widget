@@ -4,12 +4,12 @@ const Navbar = () => {
   return (
 
     // NAVBAR SECTION
-    <nav class="navbar">
+    <nav className="navbar">
       <a href="/" className="navbar__logo">
         Music Widget
       </a>
       <div className="navbar__bars">
-        <i class="fas fa-bars"></i>
+        <i className="fas fa-bars"></i>
       </div>
       <div className="navbar__menu">
         <a href="/" className="navbar__menu--links">

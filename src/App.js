@@ -85,7 +85,7 @@ function App() {
     return (
       <div className="App">
         <Navbar className="navbar" />
-        <Widget></Widget>
+       {playlists ? <Widget playlistData={playlists}></Widget> : null}
         <Hero>
         </Hero>
         {/* <header className="App-header">
