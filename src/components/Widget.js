@@ -2,20 +2,24 @@ import React,{ useState } from "react";
 import TestImage from "../images/stage.jpg";
 
 const Widget = ({ playlistData }) => {
-  const [AlbumArt, setAlbumArt] = useState(TestImage)
+  const [currentAlbum, setCurrentAlbum] = useState();
+  const [currentTrackcount, setCurrentTrackCount] = useState(null);
+  const [AlbumArt, setAlbumArt] = useState(TestImage);
   // TODO: Incoming REST data is undefined
 
   console.log("INCOMING WIDGET", playlistData);
 
-  const playlistClick = () => {
-
+  const playlistClick = (name, trackcount, image) => {
+    setCurrentAlbum(name);
+    setCurrentTrackCount(trackcount)
+    setAlbumArt(image);
   }
 
   return (
     <div className="widget">
       <section className="widget__left">
-        {/* <div className="widget__left--trackcount">{playlistData[0].tracks.total}</div> */}
-        <img alt="cover" className="widget__left--image" src={TestImage}></img>
+        <div className="widget__left--trackcount">{currentTrackcount}</div>
+        <img alt="cover" className="widget__left--image" src={AlbumArt}></img>
       </section>
       <section className="widget__right">
         <div className="widget__right--toprow">
@@ -25,7 +29,11 @@ const Widget = ({ playlistData }) => {
           </div>
         </div>
         {playlistData.map((playlist) => {
-          return <div id={playlist.name} className="widget__right--option">{playlist.name}</div>
+          return <div 
+          id={playlist.name}
+           className="widget__right--option"
+           onClick={()=>playlistClick(playlist.name, playlist.trackcount, playlist.image)}
+           >{playlist.name}</div>
         })}
         {/* <div className="widget__right--option">playlist 1</div>
         <div className="widget__right--option">playlist 2</div>
