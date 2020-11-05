@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Widget from "./components/Widget";
+import DummyData from './data/DummyData';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -85,7 +86,7 @@ function App() {
     return (
       <div className="App">
         <Navbar className="navbar" />
-       {playlists ? <Widget playlistData={playlists}></Widget> : null}
+       <Widget playlistData={DummyData}></Widget>
         <Hero>
         </Hero>
         {/* <header className="App-header">

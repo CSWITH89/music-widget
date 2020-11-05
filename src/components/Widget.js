@@ -1,10 +1,15 @@
-import React from "react";
+import React,{ useState } from "react";
 import TestImage from "../images/stage.jpg";
 
 const Widget = ({ playlistData }) => {
-  // TODO: Incoming data is undefined
+  const [AlbumArt, setAlbumArt] = useState(TestImage)
+  // TODO: Incoming REST data is undefined
 
   console.log("INCOMING WIDGET", playlistData);
+
+  const playlistClick = () => {
+
+  }
 
   return (
     <div className="widget">
@@ -19,9 +24,12 @@ const Widget = ({ playlistData }) => {
             <i class="far fa-moon"></i>
           </div>
         </div>
-        <div className="widget__right--option">playlist 1</div>
+        {playlistData.map((playlist) => {
+          return <div id={playlist.name} className="widget__right--option">{playlist.name}</div>
+        })}
+        {/* <div className="widget__right--option">playlist 1</div>
         <div className="widget__right--option">playlist 2</div>
-        <div className="widget__right--option">playlist 3</div>
+        <div className="widget__right--option">playlist 3</div> */}
       </section>
     </div>
   );
